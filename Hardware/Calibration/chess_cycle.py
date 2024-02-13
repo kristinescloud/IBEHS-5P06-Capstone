@@ -23,16 +23,16 @@
 # 
 
 import os
-import time import sleep
+from time import sleep
 from datetime import datetime
-import picamera2 import Picamera2, Preview
+from picamera2 import Picamera2, Preview
 # import cv2
 # import numpy as np
 
 # Photo session settings
 total_photos = 30             # Number of images to take
-countdown = 5                 # Interval for count-down timer, seconds
-font=cv2.FONT_HERSHEY_SIMPLEX # Cowntdown timer font
+countdown = 5               # Interval for count-down timer, seconds
+#font=cv2.FONT_HERSHEY_SIMPLEX # Cowntdown timer font
  
 # Camera settimgs
 cam_width = 1280              # Cam sensor width settings
@@ -53,8 +53,8 @@ print ("Used camera resolution: "+str(cam_width)+" x "+str(cam_height))
 # print ("Scaled image resolution: "+str(img_width)+" x "+str(img_height))
 
 # Initialize the camera
-camera0 = Picamera2(0)
-camera1 = Picamera2(1)
+camera0 = Picamera2(0) #right
+camera1 = Picamera2(1) #left
 camera0.start_preview(Preview.QTGL)
 camera1.start_preview(Preview.QTGL)
 camera0.start()
@@ -66,13 +66,14 @@ camera1.resolution=(cam_width, cam_height)
 counter = 0
 t2 = datetime.now()
 print ("Starting photo sequence")
-
+sleep(15)
 for i in range(total_photos):
     print(f"STARTING IMAGE {i}")
-    camera0.capture_file(f"./pairs/left_{i}.png")
-    camera1.capture_file(f"./pairs/right_{i}.png")
-    sleep(5)
+    sleep(2)
+    camera1.capture_file(f"./pairs/left_{i}.png")
+    camera0.capture_file(f"./pairs/right_{i}.png")
     print("end")
+    sleep(5)
     
 
 # for frame in camera.capture_continuous(capture, format="bgra", \

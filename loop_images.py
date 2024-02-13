@@ -9,10 +9,10 @@ picam1.start()
 
 n = 0
 
-while n < 10:
+while true:
     
-    picam0.capture_file(f"camo_{n}.jpg")
-    picam1.capture_file(f"cam1_{n}.jpg")
+    #picam0.capture_file(f"camo_{n}.jpg")
+    #picam1.capture_file(f"cam1_{n}.jpg")
     n=n+1
     sleep(1)
 
