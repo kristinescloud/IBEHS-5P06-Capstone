@@ -30,8 +30,7 @@ from stereovision.calibration import StereoCalibrator
 from stereovision.calibration import StereoCalibration
 from stereovision.exceptions import ChessboardNotFoundError
 
-
-# Global variables preset
+Global variables preset
 total_photos = 30
 photo_width = 640
 photo_height = 240
