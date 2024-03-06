@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-vibration_pin = 27
+vibration_pin = 27 # 27 was just a random number used as a placeholder and will need to be changed
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(vibration_pin, GPIO.OUT)
 
