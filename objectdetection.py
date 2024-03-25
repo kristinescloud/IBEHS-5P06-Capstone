@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+import torch
 
 # Load the YOLOv8 model
 model = YOLO('yolov8n.pt')
@@ -15,12 +16,12 @@ results = model('/Users/kristizzle/Desktop/IBEHS-5P06-Capstone/YOLO/ultralytics/
 for result in results:
     boxes = result.boxes  # Boxes object for bounding box outputs
     for box in boxes:
-        print('Box '+str(box.id)+'\t XYWH '+ str(box.xywh))
-    masks = result.masks  # Masks object for segmentation masks outputs
-    keypoints = result.keypoints  # Keypoints object for pose outputs
-    probs = result.probs  # Probs object for classification output
-    #result.show()  # display to screen
-    #result.save(filename='result.jpg')  # save to disk
+        print('Box '+str(box.id)+'\t Position: '+ str(box.xywh.tolist()[0][0:2])+'\t Dimensions: '+ str(box.xywh.tolist()[0][2:4]))
+    ## masks = result.masks  # Masks object for segmentation masks outputs
+    ## keypoints = result.keypoints  # Keypoints object for pose outputs
+    ## probs = result.probs  # Probs object for classification output
+    ## result.show()  # display to screen
+    ## result.save(filename='result.jpg')  # save to disk
 
 ## for box in boxes:
     ## print('Box {} is {} in xywh format', box.id, box.xywh)

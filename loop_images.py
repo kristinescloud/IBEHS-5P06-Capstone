@@ -1,5 +1,7 @@
 from picamera2 import Picamera2, Preview
 from time import sleep
+import keyboard
+
 picam0 = Picamera2(0)
 picam1 = Picamera2(1)
 picam0.start_preview(Preview.QTGL)
@@ -11,10 +13,14 @@ n = 0
 
 while true:
     
-    #picam0.capture_file(f"camo_{n}.jpg")
+    picam0.capture_file(f"camo_{n}.jpg")
     #picam1.capture_file(f"cam1_{n}.jpg")
     n=n+1
     sleep(1)
+
+    if keyboard.is_pressed('q'):
+        print("Exiting...")
+        break
 
 picam0.stop()
 picam1.stop()
