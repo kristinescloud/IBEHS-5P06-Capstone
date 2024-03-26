@@ -6,7 +6,6 @@ button2 = Button (6)
 
 def runStart():
     print("button1 pressed")
-    # process = subprocess.Popen(["python", "distance_sensors.py"])
     subprocess.run(["bash", "start_program.sh"])
     
 def runStop():
