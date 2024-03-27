@@ -1,5 +1,7 @@
 
 
+###### IMPORT STATEMENTS ABOVE
+
 class CalculateDepth:
     def __init__(self):
         self.object_widths = {
@@ -39,6 +41,6 @@ class CalculateDepth:
         depth = f*(width_true/(1.4*1e-4*width_pixels))
         return depth
 
-if __name__ == "main":
-    cd = CalculateDepth()
-    print(cd.calculate_depth(0, 300))
+# if __name__ == "__main__":
+#     cd = CalculateDepth()
+#     print(cd.calculate_depth(0, 300))
